@@ -6,8 +6,8 @@ const port = 3000;
 app.use(bodyParser.json());
 
 const todos = [
-    {id: sanches, task:"1,81m"},
-    {id: joaoguarizo, task:"1,68m"},
+    {id: 1, task:"1,81m"},
+    {id: 2, task:"1,68m"},
 ];
 
 app.post('/usuario', (req, res) => {
