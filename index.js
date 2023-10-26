@@ -6,11 +6,17 @@ const port = 3000;
 app.use(bodyParser.json());
 
 const todos = [
-  { id: 1, task: "1,81m" },
-  { id: 2, task: "1,68m" },
+  {
+    id: 5,
+    task: "Novo",
+  },
+  {
+    id: 2,
+    task: "New",
+  },
 ];
 
-app.post("/usuario", (req, res) => {
+app.post("/todos", (req, res) => {
   const newTudo = req.body;
   todos.push(newTudo);
   res.status(201).json(newTudo);
@@ -21,12 +27,12 @@ app.get("/todos", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.send("Usuário:");
+  res.send("Usuário: Otávio Sanches");
 });
 
 app.put("/todos/:id", (req, res) => {
   const idToUpdate = parseInt(req.params.id);
-  const updateTask = req.body;
+  const updatedTask = req.body;
 
   const index = todos.findIndex((todo) => todo.id === idToUpdate);
 
